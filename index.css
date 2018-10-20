@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+.goal {
+    
+    color:red;
+    font-size: 36px;
+}
