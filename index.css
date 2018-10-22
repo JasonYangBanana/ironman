@@ -2,12 +2,40 @@
     margin: 0;
     padding: 0;
 }
-header {
+header, footer {
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
 }
-.goal {
-    
+.goal, .people{
     color:red;
     font-size: 36px;
+}
+li {
+    display: flex;
+    align-items: center;
+}
+.name {
+    flex-basis: 200px;
+}
+.process {
+    height: 20px;
+    flex: 1 0 auto;
+}
+.bar {
+    height: 16px;
+    margin: 2px 0;
+    background-color: red;
+}
+.bar.safe {
+    background-color: green;
+}
+
+.notPostName {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.notPostName li {
+    flex-basis: 100%;
 }
