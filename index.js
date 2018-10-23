@@ -1,12 +1,13 @@
-const playerInfoSoure = 'https://ancient-brushlands-12436.herokuapp.com/';
+const playerInfoSource = 'https://ancient-brushlands-12436.herokuapp.com/';
 const goal = document.querySelector('.goal');
 const ul = document.querySelector('.list');
-const startDate = 16;
+const startDate = new Date('2018-10-16T00:00:00');
 const today = new Date();
-const articleNumberGoal = today.getDate() - startDate + 1;
+let msDiff = today.getTime() - startDate.getTime() + 86400000;
+let articleNumberGoal = Math.floor(msDiff / 1000 / 60 / 60 / 24);
 goal.textContent = articleNumberGoal;
 
-fetch(playerInfoSoure)
+fetch(playerInfoSource)
     .then(blob => {
         return blob.json();
     })
@@ -24,7 +25,6 @@ fetch(playerInfoSoure)
             return li;
         }).join('');
         ul.innerHTML = result;
-        const name = [];
         const bars = Array.from(document.querySelectorAll('.bar'));
         const people = document.querySelector('.people');
         let peopleCount = 0;
